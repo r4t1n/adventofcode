@@ -1,6 +1,8 @@
-# day 1
+# Day 1
 
 First time coding in Go so this was pretty rough lmao
+
+## Part 1
 
 One thing I overlooked was that you need to get ***ONLY*** the first and last digit of a line, in the example:
 
@@ -9,3 +11,5 @@ One thing I overlooked was that you need to get ***ONLY*** the first and last di
 And when there is only a single digit in a line you need to repeat it to form the two-digit number, in the example:
 
 **treb7uchet** = **77**
+
+## Part 2
