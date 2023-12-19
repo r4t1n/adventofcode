@@ -1,0 +1,11 @@
+# day 1
+
+First time coding in Go so this was pretty rough lmao
+
+One thing I overlooked was that you need to get ***ONLY*** the first and last digit of a line, in the example:
+
+**a1b2c3d4e5f** = **15**
+
+And when there is only a single digit in a line you need to repeat it to form the two-digit number, in the example:
+
+**treb7uchet** = **77**
