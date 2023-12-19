@@ -13,3 +13,5 @@ And when there is only a single digit in a line you need to repeat it to form th
 **treb7uchet** = **77**
 
 ## Part 2
+
+Almost finished but I really don't know how to check for both digits and spelled out digits in the same loop D:
