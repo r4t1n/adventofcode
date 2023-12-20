@@ -3,12 +3,13 @@ package main
 import (
 	"fmt"
 	"os"
+	"file/filepath"
 	"unicode"
 )
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run part1.go <input>")
+		fmt.Printf("Usage: go run %s.go <input>\n", filepath.Base(os.Args[0]))
 		os.Exit(1)
 	}
 
