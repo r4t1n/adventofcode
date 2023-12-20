@@ -43,8 +43,8 @@ func main() {
 			sort.Ints(dimensions)                                                   // Sort the dimensions in ascending order
 			ribbon := dimensions[0] + dimensions[0] + dimensions[1] + dimensions[1] // Calculate the ribbon size (sum of two smallest dimensions twice)
 			bow := dimensions[0] * dimensions[1] * dimensions[2]                    // Calculate the bow size (product of all dimensions)
-			totalRibbon := ribbon + bow                                             // Calculate the total area
-			ribbonSum += totalRibbon                                                // Add the total area for the line to the totalAreas variable
+			totalRibbon := ribbon + bow                                             // Calculate the total ribbon size
+			ribbonSum += totalRibbon                                                // Add the total ribbon size to the ribbon sum
 			fmt.Printf("Line: %s, length: %d, width: %d, height: %d, ribbon: %d, bow: %d, total ribbon: %d\n", line, length, width, height, ribbon, bow, totalRibbon)
 		}
 	}
