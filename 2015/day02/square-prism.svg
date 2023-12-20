@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="300px" height="400px" viewBox="0 0 300 400" enable-background="new 0 0 300 400" xml:space="preserve">
+<g>
+	<polyline fill-rule="evenodd" clip-rule="evenodd" fill="#940000" points="18.076,31.208 123.848,66.125 282.184,40.813 
+		161.1,14.986 18.076,31.208 	"/>
+	<polyline fill-rule="evenodd" clip-rule="evenodd" fill="#FFFF00" points="123.848,66.125 124.679,384.863 260.232,320.375 
+		282.184,40.813 123.848,66.125 	"/>
+	<polyline fill-rule="evenodd" clip-rule="evenodd" fill="#818100" points="18.076,31.208 33.087,297.058 124.679,384.863 
+		123.848,66.125 18.076,31.208 	"/>
+	<line fill="none" stroke="#000000" stroke-width="2.25" stroke-miterlimit="10" x1="18.076" y1="31.208" x2="161.1" y2="14.986"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.25" stroke-miterlimit="10" x1="18.076" y1="31.208" x2="123.848" y2="66.125"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.25" stroke-miterlimit="10" x1="123.848" y1="66.125" x2="124.679" y2="384.863"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.25" stroke-miterlimit="10" x1="18.076" y1="31.208" x2="33.087" y2="297.058"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.25" stroke-miterlimit="10" x1="33.087" y1="297.058" x2="124.679" y2="384.863"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.25" stroke-miterlimit="10" x1="124.679" y1="384.863" x2="260.232" y2="320.375"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.25" stroke-miterlimit="10" x1="260.232" y1="320.375" x2="282.184" y2="40.813"/>
+	
+		<line fill="none" stroke="#000000" stroke-width="2.25" stroke-miterlimit="10" x1="282.184" y1="40.813" x2="123.848" y2="66.125"/>
+	<line fill="none" stroke="#000000" stroke-width="2.25" stroke-miterlimit="10" x1="161.1" y1="14.986" x2="282.184" y2="40.813"/>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="33.087" y1="297.058" x2="35.913" y2="296.051"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" stroke-dasharray="5.9899,5.9899" x1="41.556" y1="294.039" x2="151.578" y2="254.825"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="154.399" y1="253.819" x2="157.226" y2="252.813"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="157.226" y1="252.813" x2="159.734" y2="254.458"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" stroke-dasharray="6.1678,6.1678" x1="164.892" y1="257.841" x2="255.146" y2="317.038"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="257.724" y1="318.729" x2="260.232" y2="320.375"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="157.226" y1="252.813" x2="157.274" y2="249.813"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" stroke-dasharray="5.9451,5.9451" x1="157.371" y1="243.868" x2="161.002" y2="20.958"/>
+			
+				<line fill="none" stroke="#000000" stroke-width="0.75" stroke-miterlimit="10" x1="161.051" y1="17.985" x2="161.1" y2="14.986"/>
+		</g>
+	</g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M155.722,252.813c0-0.833,0.668-1.5,1.504-1.5
+		c0.835,0,1.503,0.667,1.503,1.5s-0.668,1.5-1.503,1.5C156.39,254.313,155.722,253.646,155.722,252.813L155.722,252.813z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M257.226,320.375c0-1.667,1.336-3,3.007-3
+		c1.67,0,3.007,1.333,3.007,3s-1.337,3-3.007,3C258.562,323.375,257.226,322.042,257.226,320.375L257.226,320.375z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M30.081,297.058c0-1.667,1.336-3,3.007-3
+		c1.671,0,3.007,1.333,3.007,3s-1.336,3-3.007,3C31.417,300.058,30.081,298.725,30.081,297.058L30.081,297.058z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M158.093,14.986c0-1.667,1.337-3,3.007-3
+		c1.671,0,3.007,1.333,3.007,3c0,1.667-1.336,3-3.007,3C159.43,17.986,158.093,16.652,158.093,14.986L158.093,14.986z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M279.177,40.813c0-1.667,1.337-3,3.007-3
+		c1.671,0,3.007,1.333,3.007,3c0,1.667-1.336,3-3.007,3C280.514,43.813,279.177,42.48,279.177,40.813L279.177,40.813z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M15.068,31.208c0-1.667,1.336-3,3.007-3
+		c1.67,0,3.007,1.333,3.007,3c0,1.667-1.336,3-3.007,3C16.405,34.208,15.068,32.875,15.068,31.208L15.068,31.208z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M120.841,66.125c0-1.667,1.336-3,3.007-3
+		c1.671,0,3.007,1.333,3.007,3s-1.336,3-3.007,3C122.178,69.125,120.841,67.792,120.841,66.125L120.841,66.125z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF0000" d="M121.672,384.863c0-1.666,1.336-3,3.007-3s3.007,1.334,3.007,3
+		c0,1.667-1.336,3-3.007,3S121.672,386.53,121.672,384.863L121.672,384.863z"/>
+</g>
+</svg>
