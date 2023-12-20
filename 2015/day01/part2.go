@@ -19,9 +19,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	var floor int
-	var position int
-	var basementPosition int
+	var floor, position, basementPosition int
 	for _, char := range input {
 		if !unicode.IsSpace(rune(char)) { // Don't iterate over a new line
 			if char == '(' {
