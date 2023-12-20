@@ -21,3 +21,5 @@ then we need to make the bow which is just the product of all dimensions:
 **2x3x4**: **2 * 3 * 4** = **24**
 
 ![Square prism](square-prism.svg)
+
+[Image source](https://commons.wikimedia.org/wiki/File:Square_prism.svg#/media/File:Square_prism.svg)
