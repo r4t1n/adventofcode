@@ -22,7 +22,7 @@ func main() {
 
 	var floor, position, basementPosition int
 	for _, char := range input {
-		if !unicode.IsSpace(rune(char)) { // Don't iterate over a new line
+		if !unicode.IsSpace(rune(char)) { // Don't iterate over an empty character
 			if char == '(' {
 				floor++
 				position++
