@@ -13,3 +13,4 @@ Solving Advent of Code in Go
 |Day|Part 1|Part 2|
 |:-:|:----:|:----:|
 |[Day 1](2015/day01)|⭐|⭐|
+|[Day 1](2015/day01)|⭐||
