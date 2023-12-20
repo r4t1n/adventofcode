@@ -21,7 +21,7 @@ func main() {
 
 	var floor int
 	for _, char := range input {
-		if !unicode.IsSpace(rune(char)) {
+		if !unicode.IsSpace(rune(char)) { // Don't iterate over a new line
 			if char == '(' {
 				floor++
 				fmt.Println("Up")
