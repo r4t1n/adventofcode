@@ -4,7 +4,7 @@
 
 example.txt should output 58
 
-The formula for calculating the slack is the product of the two smallest dimension: 
+The formula for calculating the slack is the product of the two smallest dimensions: 
 
 **smallest dimension** * **second smallest dimension**
 
