@@ -1,16 +1,39 @@
 # adventofcode
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/r4t1n/adventofcode)](https://goreportcard.com/report/github.com/r4t1n/adventofcode)
+
 Solving Advent of Code in Go
 
-## 2023
+## Stars
+
+### 2023
 
 |Day|Part 1|Part 2|
 |:-:|:----:|:----:|
-|[Day 1](2023/day01)|⭐||
+|[Day 1](2023/01)|⭐||
 
-## 2015
+### 2015
 
 |Day|Part 1|Part 2|
 |:-:|:----:|:----:|
-|[Day 1](2015/day01)|⭐|⭐|
-|[Day 2](2015/day02)|⭐|⭐|
+|[Day 1](2015/01)|⭐|⭐|
+|[Day 2](2015/02)|⭐|⭐|
+
+## File structure
+
+adventofcode/year/day/part
+
+```
+adventofcode/
+|-- year/
+|   |-- day/
+|       |-- input.txt
+|       |-- README.md
+|       |-- part/
+|           |-- example.txt
+|           |-- main.go
+```
+
+The input is given inside the day directory since both parts use the same input.
+
+The examples are usually part specific so those are inside the part folder.

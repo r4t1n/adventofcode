@@ -2,4 +2,4 @@
 
 ## Part 1
 
-example1.txt should output 8
+example.txt should output 8
