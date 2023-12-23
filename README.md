@@ -34,6 +34,4 @@ adventofcode/
 |           |-- main.go
 ```
 
-The input is given inside the day directory since both parts use the same input.
-
-The examples are usually part specific so those are inside the part folder.
+The input is inside the day directory since both parts use the same input. The examples are usually part specific so those are inside the part folder.
