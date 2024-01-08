@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"path/filepath"
 	"regexp"
 	"sort"
 	"strconv"
@@ -22,8 +21,8 @@ func extractDimensions(line string, length, width, height *int) {
 }
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Printf("Usage: go run %s.go <input>\n", filepath.Base(os.Args[0]))
+	if len(os.Args) < 2 { // Check if input is provided
+		fmt.Println("Please provide the input as the first argument (go run main.go <input>)")
 		os.Exit(1)
 	}
 

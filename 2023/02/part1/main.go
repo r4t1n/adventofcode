@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"path/filepath"
 	"regexp"
 	"strings"
 )
@@ -22,7 +21,7 @@ func extractGameData(line string) {
 
 func main() {
 	if len(os.Args) < 2 { // Check if input is provided
-		fmt.Printf("Usage: go run %s.go <input>\n", filepath.Base(os.Args[0]))
+		fmt.Println("Please provide the input as the first argument (go run main.go <input>)")
 		os.Exit(1)
 	}
 
