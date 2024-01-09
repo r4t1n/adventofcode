@@ -3,26 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
-	"unicode"
 )
 
 func puzzle(input []byte) {
-	var floor int
-	for _, char := range input {
-		if !unicode.IsSpace(rune(char)) { // Don't iterate over an empty character
-			if char == '(' {
-				floor++
-				fmt.Println("Up")
-			} else if char == ')' {
-				floor--
-				fmt.Println("Down")
-			} else {
-				fmt.Printf("Character: %c is invalid (not a bracket)\n", char)
-			}
-		}
-	}
-
-	fmt.Printf("\nFinal floor: %d\n", floor)
 }
 
 func main() {
