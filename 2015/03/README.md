@@ -2,4 +2,4 @@
 
 ## Part 1
 
-example1.txt should output 0
+example1.txt should output 2
