@@ -19,6 +19,7 @@ Solving Advent of Code in Go
 |[Day 1](2015/01)|⭐|⭐|
 |[Day 2](2015/02)|⭐|⭐|
 |[Day 3](2015/03)|⭐|⭐|
+|[Day 3](2015/04)|⭐|⭐|
 
 ## File structure
 

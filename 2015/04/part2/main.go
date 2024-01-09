@@ -8,7 +8,7 @@ import (
 )
 
 func puzzle(input []byte) {
-	prefix := "00000"
+	prefix := "000000"
 	var number int
 	fmt.Println("Calculating...")
 	for {
