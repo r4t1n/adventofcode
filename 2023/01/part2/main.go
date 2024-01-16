@@ -9,19 +9,7 @@ import (
 
 var spelledOutDigits = [9]string{"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"}
 
-func main() {
-	if len(os.Args) < 2 { // Check if input is provided
-		fmt.Println("Please provide the input as the first argument (go run main.go <input>)")
-		os.Exit(1)
-	}
-
-	inputFile := os.Args[1]              // Get the input file from the second argument
-	input, err := os.ReadFile(inputFile) // Read the file and store its contents in input
-	if err != nil {
-		fmt.Println("Error reading file:", err)
-		os.Exit(1)
-	}
-
+func puzzle(input []byte) {
 	var twoDigits []int
 	for _, line := range strings.Split(string(input), "\n") { // Iterate over each line
 		if len(line) > 0 { // Check if line is not empty
@@ -59,4 +47,20 @@ func main() {
 		sum += twoDigit
 	}
 	fmt.Println("\nSum:", sum)
+}
+
+func main() {
+	if len(os.Args) < 2 { // Check if input is provided
+		fmt.Println("Please provide the input as the first argument (go run main.go <input>)")
+		os.Exit(1)
+	}
+
+	inputFile := os.Args[1]              // Get the input file from the first argument
+	input, err := os.ReadFile(inputFile) // Read the input from the input file
+	if err != nil {
+		fmt.Println("Error reading file:", err)
+		os.Exit(1)
+	}
+
+	puzzle(input)
 }

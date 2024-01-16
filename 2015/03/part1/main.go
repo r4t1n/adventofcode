@@ -44,7 +44,7 @@ func puzzle(input []byte) {
 		fmt.Printf("Coordinate: %s, presents: %d\n", key, value)
 	}
 
-	fmt.Printf("Houses with presents: %d\n", housesWithPresents)
+	fmt.Printf("\nHouses with presents: %d\n", housesWithPresents)
 }
 
 func main() {

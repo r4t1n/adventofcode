@@ -19,7 +19,7 @@ func puzzle(input []byte) {
 		number++
 	}
 
-	fmt.Printf("First number with hash prefix %s (%d digits): %d\n", prefix, len(prefix), number)
+	fmt.Printf("\nFirst number with hash prefix %s (%d digits): %d\n", prefix, len(prefix), number)
 }
 
 func main() {
