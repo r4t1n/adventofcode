@@ -3,7 +3,7 @@ use std::fs;
 use std::process;
 
 fn puzzle(input: &str) {
-    println!("{input}");
+    println!("{input}")
 }
 
 fn main() {
