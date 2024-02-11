@@ -23,6 +23,7 @@ fn puzzle(input: &str) {
             basement_position = position;
         }
     }
+
     println!("Part 1: {}", floor);
     println!("Part 2: {}", basement_position)
 }
@@ -33,6 +34,7 @@ fn main() {
         println!("Pass the input file as the second argument");
         process::exit(1);
     }
+
     let input_filename: &String = &args[1];
     let input: String = match fs::read_to_string(input_filename) {
         Ok(content) => content,
@@ -41,5 +43,6 @@ fn main() {
             process::exit(1);
         }
     };
+
     puzzle(&input);
 }
