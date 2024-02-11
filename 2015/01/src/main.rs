@@ -24,8 +24,8 @@ fn puzzle(input: &str) {
         }
     }
 
-    println!("Part 1: {}", floor);
-    println!("Part 2: {}", basement_position)
+    println!("[+] Part 1: {}", floor);
+    println!("[+] Part 2: {}", basement_position);
 }
 
 fn main() {

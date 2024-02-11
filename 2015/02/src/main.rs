@@ -15,8 +15,8 @@ fn puzzle(input: &str) {
         ribbon_sum += ribbon as u32;
     }
 
-    println!("Part 1: {}", wrapping_paper_sum);
-    println!("Part 2: {}", ribbon_sum);
+    println!("[+] Part 1: {}", wrapping_paper_sum);
+    println!("[+] Part 2: {}", ribbon_sum);
 }
 
 fn calculate_dimensions(dimensions: &mut [u8]) -> (u16, u16) {

@@ -3,7 +3,18 @@ use std::fs;
 use std::process;
 
 fn puzzle(input: &str) {
-    println!("{}", input);
+    for char in input.chars() {
+        println!("{}", char);
+    }
+
+    for line in input.lines() {
+        println!("{}", line);
+    }
+
+    let x = 0;
+    let y = 0;
+    println!("[+] Part 1: {}", x);
+    println!("[+] Part 2: {}", y);
 }
 
 fn main() {
