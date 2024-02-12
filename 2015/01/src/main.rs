@@ -16,7 +16,7 @@ fn puzzle(input: &str) {
         } else if char == '\n' {
             continue;
         } else {
-            println!("Character: '{}' is not valid (not a bracket)", char)
+            println!("Character: '{}' is not valid", char)
         }
 
         if floor == -1 && basement_position == 0 {
