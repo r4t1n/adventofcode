@@ -2,9 +2,9 @@ use std::env::args;
 use std::fs;
 use std::process;
 
-fn puzzle(input: &str) -> (u32, u32) {
-    let mut answer_part_1: u32 = 0;
-    let mut answer_part_2: u32 = 0;
+fn puzzle(input: &str) -> (i32, i32) {
+    let mut answer_part_1: i32 = 0;
+    let mut answer_part_2: i32 = 0;
 
     for line in input.lines() {
         println!("{}", line);
