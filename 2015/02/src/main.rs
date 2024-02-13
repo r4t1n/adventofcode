@@ -2,7 +2,7 @@ use std::env::args;
 use std::fs;
 use std::process;
 
-fn puzzle(input: &str) {
+fn puzzle(input: &str) -> (u32, u32) {
     let mut ribbon_sum: u32 = 0;
     let mut wrapping_paper_sum: u32 = 0;
 
@@ -17,8 +17,7 @@ fn puzzle(input: &str) {
         ribbon_sum += ribbon as u32;
     }
 
-    println!("[+] Part 1: {}", wrapping_paper_sum);
-    println!("[+] Part 2: {}", ribbon_sum);
+    (wrapping_paper_sum, ribbon_sum)
 }
 
 fn calculate_dimensions(dimensions: &mut [u8]) -> (u16, u16) {
@@ -34,6 +33,7 @@ fn calculate_dimensions(dimensions: &mut [u8]) -> (u16, u16) {
     let wrapping_paper: u16 = surface_area + slack;
     let ribbon: u8 = dimensions[0] + dimensions[0] + dimensions[1] + dimensions[1];
     let total_ribbon: u16 = bow + ribbon as u16;
+
     (wrapping_paper, total_ribbon)
 }
 
@@ -53,5 +53,7 @@ fn main() {
         }
     };
 
-    puzzle(&input);
+    let (answer_part_1, answer_part_2) = puzzle(&input);
+    println!("[+] Part 1: {}", answer_part_1);
+    println!("[+] Part 2: {}", answer_part_2);
 }

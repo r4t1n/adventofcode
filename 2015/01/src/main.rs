@@ -2,7 +2,7 @@ use std::env::args;
 use std::fs;
 use std::process;
 
-fn puzzle(input: &str) {
+fn puzzle(input: &str) -> (i16, u16) {
     let mut basement_position: u16 = 0;
     let mut floor: i16 = 0;
     let mut position: u16 = 0;
@@ -23,8 +23,7 @@ fn puzzle(input: &str) {
         }
     }
 
-    println!("[+] Part 1: {}", floor);
-    println!("[+] Part 2: {}", basement_position);
+    (floor, basement_position)
 }
 
 fn main() {
@@ -43,5 +42,7 @@ fn main() {
         }
     };
 
-    puzzle(&input);
+    let (answer_part_1, answer_part_2) = puzzle(&input);
+    println!("[+] Part 1: {}", answer_part_1);
+    println!("[+] Part 2: {}", answer_part_2);
 }

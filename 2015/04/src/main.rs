@@ -3,7 +3,7 @@ use std::env::args;
 use std::fs;
 use std::process;
 
-fn puzzle(input: &str) {
+fn puzzle(input: &str) -> (u32, u32) {
     let mut nonce_part_1: u32 = 0;
     let mut nonce_part_2: u32 = 0;
     let prefix_part_1: &str = "00000";
@@ -30,8 +30,7 @@ fn puzzle(input: &str) {
         nonce_part_2 += 1;
     }
 
-    println!("[+] Part 1: {}", nonce_part_1);
-    println!("[+] Part 2: {}", nonce_part_2);
+    (nonce_part_1, nonce_part_2)
 }
 
 fn main() {
@@ -50,5 +49,7 @@ fn main() {
         }
     };
 
-    puzzle(&input);
+    let (answer_part_1, answer_part_2) = puzzle(&input);
+    println!("[+] Part 1: {}", answer_part_1);
+    println!("[+] Part 2: {}", answer_part_2);
 }

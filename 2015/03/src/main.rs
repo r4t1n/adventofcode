@@ -3,7 +3,7 @@ use std::env::args;
 use std::fs;
 use std::process;
 
-fn puzzle(input: &str) {
+fn puzzle(input: &str) -> (i32, i32) {
     let mut presents_part_1: HashMap<String, u8> = HashMap::new();
     let mut presents_part_2: HashMap<String, u8> = HashMap::new();
     let mut robot_turn: bool = false;
@@ -49,7 +49,6 @@ fn puzzle(input: &str) {
 
         let coordinate: String = format!("{}, {}", x, y);
         *presents_part_1.entry(coordinate.to_owned()).or_default() += 1;
-
         if robot_turn {
             let coordinate: String = format!("{}, {}", robot_x, robot_y);
             *presents_part_2.entry(coordinate.to_owned()).or_default() += 1;
@@ -64,8 +63,10 @@ fn puzzle(input: &str) {
     let houses_with_presents_part_1: usize = presents_part_1.len();
     let houses_with_presents_part_2: usize = presents_part_2.len();
 
-    println!("[+] Part 1: {}", houses_with_presents_part_1);
-    println!("[+] Part 2: {}", houses_with_presents_part_2);
+    (
+        houses_with_presents_part_1.try_into().unwrap(),
+        houses_with_presents_part_2.try_into().unwrap(),
+    )
 }
 
 fn main() {
@@ -84,5 +85,7 @@ fn main() {
         }
     };
 
-    puzzle(&input);
+    let (answer_part_1, answer_part_2) = puzzle(&input);
+    println!("[+] Part 1: {}", answer_part_1);
+    println!("[+] Part 2: {}", answer_part_2);
 }
