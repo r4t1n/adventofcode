@@ -4,34 +4,34 @@ use std::fs;
 use std::process;
 
 fn puzzle(input: &str) {
-    let mut part_1_nonce: u32 = 0;
-    let mut part_2_nonce: u32 = 0;
-    let part_1_prefix: &str = "00000";
-    let part_2_prefix: &str = "000000";
+    let mut nonce_part_1: u32 = 0;
+    let mut nonce_part_2: u32 = 0;
+    let prefix_part_1: &str = "00000";
+    let prefix_part_2: &str = "000000";
 
     loop {
-        let combined_input: String = format!("{}{}", input, part_1_nonce);
+        let combined_input: String = format!("{}{}", input, nonce_part_1);
         let hash: Digest = md5::compute(combined_input);
-        if format!("{:?}", hash).starts_with(part_1_prefix) {
+        if format!("{:?}", hash).starts_with(prefix_part_1) {
             break;
         }
 
-        part_1_nonce += 1;
+        nonce_part_1 += 1;
     }
 
     loop {
-        let combined_input: String = format!("{}{}", input, part_2_nonce);
+        let combined_input: String = format!("{}{}", input, nonce_part_2);
         let hash: Digest = md5::compute(combined_input);
 
-        if format!("{:?}", hash).starts_with(part_2_prefix) {
+        if format!("{:?}", hash).starts_with(prefix_part_2) {
             break;
         }
 
-        part_2_nonce += 1;
+        nonce_part_2 += 1;
     }
 
-    println!("[+] Part 1: {}", part_1_nonce);
-    println!("[+] Part 2: {}", part_2_nonce);
+    println!("[+] Part 1: {}", nonce_part_1);
+    println!("[+] Part 2: {}", nonce_part_2);
 }
 
 fn main() {

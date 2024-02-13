@@ -6,6 +6,7 @@ fn puzzle(input: &str) {
     let mut basement_position: u16 = 0;
     let mut floor: i16 = 0;
     let mut position: u16 = 0;
+
     for char in input.chars() {
         if char == '(' {
             floor += 1;
@@ -13,10 +14,8 @@ fn puzzle(input: &str) {
         } else if char == ')' {
             floor -= 1;
             position += 1;
-        } else if char == '\n' {
-            continue;
         } else {
-            println!("Character: '{}' is not valid", char)
+            println!("Character {} is not valid", char)
         }
 
         if floor == -1 && basement_position == 0 {

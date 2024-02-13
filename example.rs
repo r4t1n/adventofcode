@@ -13,6 +13,7 @@ fn puzzle(input: &str) {
 
     let x = 0;
     let y = 0;
+
     println!("[+] Part 1: {}", x);
     println!("[+] Part 2: {}", y);
 }

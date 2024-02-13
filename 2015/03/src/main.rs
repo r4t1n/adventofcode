@@ -4,10 +4,8 @@ use std::fs;
 use std::process;
 
 fn puzzle(input: &str) {
-    let mut houses_with_presents: u16 = 0;
-    let mut presents: HashMap<String, u8> = HashMap::new();
-    let mut robot_houses_with_presents: u16 = 0;
-    let mut robot_presents: HashMap<String, u8> = HashMap::new();
+    let mut presents_part_1: HashMap<String, u8> = HashMap::new();
+    let mut presents_part_2: HashMap<String, u8> = HashMap::new();
     let mut robot_turn: bool = false;
     let mut robot_x: i16 = 0;
     let mut robot_y: i16 = 0;
@@ -15,6 +13,7 @@ fn puzzle(input: &str) {
     let mut santa_y: i16 = 0;
     let mut x: i16 = 0;
     let mut y: i16 = 0;
+
     for char in input.chars() {
         if char == '^' {
             y += 1;
@@ -45,32 +44,28 @@ fn puzzle(input: &str) {
                 santa_x -= 1;
             }
         } else {
-            println!("Character: '{}' is not valid", char);
+            println!("Character '{}' is invalid", char);
         }
 
         let coordinate: String = format!("{}, {}", x, y);
-        *presents.entry(coordinate.to_owned()).or_default() += 1;
+        *presents_part_1.entry(coordinate.to_owned()).or_default() += 1;
 
         if robot_turn {
             let coordinate: String = format!("{}, {}", robot_x, robot_y);
-            *robot_presents.entry(coordinate.to_owned()).or_default() += 1;
+            *presents_part_2.entry(coordinate.to_owned()).or_default() += 1;
         } else {
             let coordinate: String = format!("{}, {}", santa_x, santa_y);
-            *robot_presents.entry(coordinate.to_owned()).or_default() += 1;
+            *presents_part_2.entry(coordinate.to_owned()).or_default() += 1;
         }
 
         robot_turn = !robot_turn
     }
 
-    for (_key, _value) in presents.iter() {
-        houses_with_presents += 1;
-    }
-    for (_key, _value) in robot_presents.iter() {
-        robot_houses_with_presents += 1;
-    }
+    let houses_with_presents_part_1: usize = presents_part_1.len();
+    let houses_with_presents_part_2: usize = presents_part_2.len();
 
-    println!("[+] Part 1: {}", houses_with_presents);
-    println!("[+] Part 2: {}", robot_houses_with_presents);
+    println!("[+] Part 1: {}", houses_with_presents_part_1);
+    println!("[+] Part 2: {}", houses_with_presents_part_2);
 }
 
 fn main() {

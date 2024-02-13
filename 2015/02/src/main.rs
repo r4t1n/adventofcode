@@ -5,12 +5,14 @@ use std::process;
 fn puzzle(input: &str) {
     let mut ribbon_sum: u32 = 0;
     let mut wrapping_paper_sum: u32 = 0;
+
     for line in input.lines() {
         let mut dimensions: Vec<u8> = line
             .split('x')
             .filter_map(|s: &str| s.parse().ok())
             .collect();
         let (wrapping_paper, ribbon) = calculate_dimensions(&mut dimensions);
+
         wrapping_paper_sum += wrapping_paper as u32;
         ribbon_sum += ribbon as u32;
     }
@@ -23,8 +25,10 @@ fn calculate_dimensions(dimensions: &mut [u8]) -> (u16, u16) {
     let l: u16 = dimensions[0] as u16;
     let w: u16 = dimensions[1] as u16;
     let h: u16 = dimensions[2] as u16;
+
     let surface_area: u16 = (2 * l * w) + (2 * w * h) + (2 * h * l);
     let bow: u16 = l * w * h;
+
     dimensions.sort();
     let slack: u16 = dimensions[0] as u16 * dimensions[1] as u16;
     let wrapping_paper: u16 = surface_area + slack;
