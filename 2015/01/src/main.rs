@@ -15,7 +15,8 @@ fn puzzle(input: &str) -> (i16, u16) {
             floor -= 1;
             position += 1;
         } else {
-            println!("Character {} is not valid", char)
+            println!("[!] Invalid character: {}", char);
+            continue;
         }
 
         if floor == -1 && basement_position == 0 {
@@ -29,7 +30,7 @@ fn puzzle(input: &str) -> (i16, u16) {
 fn main() {
     let args: Vec<String> = args().collect();
     if args.len() != 2 {
-        println!("Pass the input file as the second argument");
+        println!("[!] Usage: {} <input file>", args[0]);
         process::exit(1);
     }
 
@@ -37,7 +38,7 @@ fn main() {
     let input: String = match fs::read_to_string(input_filename) {
         Ok(content) => content.trim().to_string(),
         Err(err) => {
-            eprintln!("Error reading file: {}", err);
+            eprintln!("[!] Error reading file: {}", err);
             process::exit(1);
         }
     };

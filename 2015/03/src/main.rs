@@ -3,9 +3,9 @@ use std::env::args;
 use std::fs;
 use std::process;
 
-fn puzzle(input: &str) -> (i32, i32) {
-    let mut presents_part_1: HashMap<String, u8> = HashMap::new();
-    let mut presents_part_2: HashMap<String, u8> = HashMap::new();
+fn puzzle(input: &str) -> (u16, u16) {
+    let mut presents_part_1: HashMap<(i16, i16), u8> = HashMap::new();
+    let mut presents_part_2: HashMap<(i16, i16), u8> = HashMap::new();
     let mut robot_turn: bool = false;
     let mut robot_x: i16 = 0;
     let mut robot_y: i16 = 0;
@@ -44,35 +44,34 @@ fn puzzle(input: &str) -> (i32, i32) {
                 santa_x -= 1;
             }
         } else {
-            println!("Character '{}' is invalid", char);
+            println!("[!] Invalid character: {}", char);
+            continue;
         }
 
-        let coordinate: String = format!("{}, {}", x, y);
-        *presents_part_1.entry(coordinate.to_owned()).or_default() += 1;
+        *presents_part_1.entry((x, y).to_owned()).or_default() += 1;
         if robot_turn {
-            let coordinate: String = format!("{}, {}", robot_x, robot_y);
-            *presents_part_2.entry(coordinate.to_owned()).or_default() += 1;
+            *presents_part_2
+                .entry((robot_x, robot_y).to_owned())
+                .or_default() += 1;
         } else {
-            let coordinate: String = format!("{}, {}", santa_x, santa_y);
-            *presents_part_2.entry(coordinate.to_owned()).or_default() += 1;
+            *presents_part_2
+                .entry((santa_x, santa_y).to_owned())
+                .or_default() += 1;
         }
 
         robot_turn = !robot_turn
     }
 
-    let houses_with_presents_part_1: usize = presents_part_1.len();
-    let houses_with_presents_part_2: usize = presents_part_2.len();
+    let houses_with_presents_part_1: u16 = presents_part_1.len().try_into().unwrap();
+    let houses_with_presents_part_2: u16 = presents_part_2.len().try_into().unwrap();
 
-    (
-        houses_with_presents_part_1.try_into().unwrap(),
-        houses_with_presents_part_2.try_into().unwrap(),
-    )
+    (houses_with_presents_part_1, houses_with_presents_part_2)
 }
 
 fn main() {
     let args: Vec<String> = args().collect();
     if args.len() != 2 {
-        println!("Pass the input file as the second argument");
+        println!("[!] Usage: {} <input file>", args[0]);
         process::exit(1);
     }
 
@@ -80,7 +79,7 @@ fn main() {
     let input: String = match fs::read_to_string(input_filename) {
         Ok(content) => content.trim().to_string(),
         Err(err) => {
-            eprintln!("Error reading file: {}", err);
+            eprintln!("[!] Error reading file: {}", err);
             process::exit(1);
         }
     };

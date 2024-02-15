@@ -11,8 +11,13 @@ fn puzzle(input: &str) -> (u32, u32) {
             .split('x')
             .filter_map(|s: &str| s.parse().ok())
             .collect();
-        let (wrapping_paper, ribbon) = calculate_dimensions(&mut dimensions);
 
+        if dimensions.len() != 3 {
+            println!("[!] Invalid line: {}", line);
+            continue;
+        }
+
+        let (wrapping_paper, ribbon) = calculate_dimensions(&mut dimensions);
         wrapping_paper_sum += wrapping_paper as u32;
         ribbon_sum += ribbon as u32;
     }
@@ -40,7 +45,7 @@ fn calculate_dimensions(dimensions: &mut [u8]) -> (u16, u16) {
 fn main() {
     let args: Vec<String> = args().collect();
     if args.len() != 2 {
-        println!("Pass the input file as the second argument");
+        println!("[!] Usage: {} <input file>", args[0]);
         process::exit(1);
     }
 
@@ -48,7 +53,7 @@ fn main() {
     let input: String = match fs::read_to_string(input_filename) {
         Ok(content) => content.trim().to_string(),
         Err(err) => {
-            eprintln!("Error reading file: {}", err);
+            eprintln!("[!] Error reading file: {}", err);
             process::exit(1);
         }
     };

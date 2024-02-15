@@ -4,39 +4,35 @@ use std::fs;
 use std::process;
 
 fn puzzle(input: &str) -> (u32, u32) {
-    let mut nonce_part_1: u32 = 0;
-    let mut nonce_part_2: u32 = 0;
     let prefix_part_1: &str = "00000";
     let prefix_part_2: &str = "000000";
 
+    (
+        compute_nonce(input, prefix_part_1),
+        compute_nonce(input, prefix_part_2),
+    )
+}
+
+fn compute_nonce(input: &str, prefix: &str) -> u32 {
+    let mut nonce: u32 = 0;
+
     loop {
-        let combined_input: String = format!("{}{}", input, nonce_part_1);
+        let combined_input: String = format!("{}{}", input, nonce);
         let hash: Digest = md5::compute(combined_input);
-        if format!("{:?}", hash).starts_with(prefix_part_1) {
+        if format!("{:?}", hash).starts_with(prefix) {
             break;
         }
 
-        nonce_part_1 += 1;
+        nonce += 1;
     }
 
-    loop {
-        let combined_input: String = format!("{}{}", input, nonce_part_2);
-        let hash: Digest = md5::compute(combined_input);
-
-        if format!("{:?}", hash).starts_with(prefix_part_2) {
-            break;
-        }
-
-        nonce_part_2 += 1;
-    }
-
-    (nonce_part_1, nonce_part_2)
+    nonce
 }
 
 fn main() {
     let args: Vec<String> = args().collect();
     if args.len() != 2 {
-        println!("Pass the input file as the second argument");
+        println!("[!] Usage: {} <input file>", args[0]);
         process::exit(1);
     }
 
@@ -44,7 +40,7 @@ fn main() {
     let input: String = match fs::read_to_string(input_filename) {
         Ok(content) => content.trim().to_string(),
         Err(err) => {
-            eprintln!("Error reading file: {}", err);
+            eprintln!("[!] Error reading file: {}", err);
             process::exit(1);
         }
     };
