@@ -16,9 +16,9 @@ fn compute_nonce(input: &str, prefix: &str) -> u32 {
     let mut nonce: u32 = 0;
 
     loop {
-        let combined_input: String = format!("{}{}", input, nonce);
-        let hash: Digest = md5::compute(combined_input);
-        if format!("{:?}", hash).starts_with(prefix) {
+        let input_with_nonce: String = format!("{}{}", input, nonce);
+        let checksum: Digest = md5::compute(input_with_nonce);
+        if format!("{:?}", checksum).starts_with(prefix) {
             break;
         }
 
