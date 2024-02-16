@@ -8,15 +8,19 @@ fn puzzle(input: &str) -> (i16, u16) {
     let mut position: u16 = 0;
 
     for char in input.chars() {
-        if char == '(' {
-            floor += 1;
-            position += 1;
-        } else if char == ')' {
-            floor -= 1;
-            position += 1;
-        } else {
-            println!("[!] Invalid character: {}", char);
-            continue;
+        match char {
+            '(' => {
+                floor += 1;
+                position += 1;
+            }
+            ')' => {
+                floor -= 1;
+                position += 1;
+            }
+            _ => {
+                println!("[!] Invalid character: {}", char);
+                continue;
+            }
         }
 
         if floor == -1 && basement_position == 0 {

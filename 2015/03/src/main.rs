@@ -1,11 +1,11 @@
-use std::collections::HashMap;
+use std::collections::HashSet;
 use std::env::args;
 use std::fs;
 use std::process;
 
 fn puzzle(input: &str) -> (u16, u16) {
-    let mut presents_part_1: HashMap<(i16, i16), u8> = HashMap::new();
-    let mut presents_part_2: HashMap<(i16, i16), u8> = HashMap::new();
+    let mut presents_part_1: HashSet<(i16, i16)> = HashSet::new();
+    let mut presents_part_2: HashSet<(i16, i16)> = HashSet::new();
     let mut robot_turn: bool = false;
     let mut robot_x: i16 = 0;
     let mut robot_y: i16 = 0;
@@ -15,55 +15,57 @@ fn puzzle(input: &str) -> (u16, u16) {
     let mut y: i16 = 0;
 
     for char in input.chars() {
-        if char == '^' {
-            y += 1;
-            if robot_turn {
-                robot_y += 1;
-            } else {
-                santa_y += 1;
+        match char {
+            '^' => {
+                y += 1;
+                if robot_turn {
+                    robot_y += 1;
+                } else {
+                    santa_y += 1;
+                }
             }
-        } else if char == 'v' {
-            y -= 1;
-            if robot_turn {
-                robot_y -= 1;
-            } else {
-                santa_y -= 1;
+            'v' => {
+                y -= 1;
+                if robot_turn {
+                    robot_y -= 1;
+                } else {
+                    santa_y -= 1;
+                }
             }
-        } else if char == '>' {
-            x += 1;
-            if robot_turn {
-                robot_x += 1;
-            } else {
-                santa_x += 1;
+            '>' => {
+                x += 1;
+                if robot_turn {
+                    robot_x += 1;
+                } else {
+                    santa_x += 1;
+                }
             }
-        } else if char == '<' {
-            x -= 1;
-            if robot_turn {
-                robot_x -= 1;
-            } else {
-                santa_x -= 1;
+            '<' => {
+                x -= 1;
+                if robot_turn {
+                    robot_x -= 1;
+                } else {
+                    santa_x -= 1;
+                }
             }
-        } else {
-            println!("[!] Invalid character: {}", char);
-            continue;
+            _ => {
+                println!("[!] Invalid character: {}", char);
+                continue;
+            }
         }
 
-        *presents_part_1.entry((x, y).to_owned()).or_default() += 1;
+        presents_part_1.insert((x, y));
         if robot_turn {
-            *presents_part_2
-                .entry((robot_x, robot_y).to_owned())
-                .or_default() += 1;
+            presents_part_2.insert((robot_x, robot_y));
         } else {
-            *presents_part_2
-                .entry((santa_x, santa_y).to_owned())
-                .or_default() += 1;
+            presents_part_2.insert((santa_x, santa_y));
         }
 
         robot_turn = !robot_turn
     }
 
-    let houses_with_presents_part_1: u16 = presents_part_1.len().try_into().unwrap();
-    let houses_with_presents_part_2: u16 = presents_part_2.len().try_into().unwrap();
+    let houses_with_presents_part_1: u16 = presents_part_1.len() as u16;
+    let houses_with_presents_part_2: u16 = presents_part_2.len() as u16;
 
     (houses_with_presents_part_1, houses_with_presents_part_2)
 }
