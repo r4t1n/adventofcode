@@ -8,7 +8,7 @@ fn puzzle(input: &str) -> (u32, u32) {
     let prefix_part_2: &str = "000000";
 
     let nonce_part_1: u32 = compute_nonce(input, prefix_part_1);
-    let nonce_part_2: u32 = compute_nonce(input, prefix_part_2)
+    let nonce_part_2: u32 = compute_nonce(input, prefix_part_2);
 
     (nonce_part_1, nonce_part_2)
 }
