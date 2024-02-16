@@ -6,7 +6,6 @@ use std::process;
 fn puzzle(input: &str) -> (u32, u32) {
     let prefix_part_1: &str = "00000";
     let prefix_part_2: &str = "000000";
-
     let nonce_part_1: u32 = compute_nonce(input, prefix_part_1);
     let nonce_part_2: u32 = compute_nonce(input, prefix_part_2);
 
