@@ -5,9 +5,9 @@ use std::process;
 fn puzzle(input: &str) -> (String, i32) {
     let answer_part_2: i32 = 0;
     let mut code: String = String::new();
-    let mut x_values: Vec<i8> = Vec::new();
+    let mut values_x: Vec<i8> = Vec::new();
+    let mut values_y: Vec<i8> = Vec::new();
     let mut x: i8 = 0;
-    let mut y_values: Vec<i8> = Vec::new();
     let mut y: i8 = 0;
 
     for line in input.lines() {
@@ -40,15 +40,15 @@ fn puzzle(input: &str) -> (String, i32) {
             }
         }
 
-        x_values.push(x);
-        y_values.push(y);
+        values_x.push(x);
+        values_y.push(y);
     }
 
-    for (x, y) in x_values.iter().zip(&y_values) {
+    for (x, y) in values_x.iter().zip(&values_y) {
         if let Some(key) = get_key(*x, *y) {
             code.push(key);
         } else {
-            println!("[!] Invalid coordinates: {}, {}", x, y);
+            println!("[!] Invalid coordinate: {}, {}", x, y);
         }
     }
 
@@ -58,21 +58,21 @@ fn puzzle(input: &str) -> (String, i32) {
 fn get_key(x: i8, y: i8) -> Option<char> {
     let keypad: [[char; 3]; 3] = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']];
 
-    let row_index: usize = match y {
+    let index_row: usize = match y {
         -1 => 2,
         0 => 1,
         1 => 0,
         _ => return None,
     };
 
-    let col_index: usize = match x {
+    let index_col: usize = match x {
         -1 => 0,
         0 => 1,
         1 => 2,
         _ => return None,
     };
 
-    Some(keypad[row_index][col_index])
+    Some(keypad[index_row][index_col])
 }
 
 fn main() {
