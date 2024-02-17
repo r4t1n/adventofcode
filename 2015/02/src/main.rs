@@ -51,7 +51,7 @@ fn main() {
 
     let input_filename: &String = &args[1];
     let input: String = match fs::read_to_string(input_filename) {
-        Ok(content) => content.trim().to_string(),
+        Ok(input) => input.trim().to_string(),
         Err(err) => {
             eprintln!("[!] Error reading file: {}", err);
             process::exit(1);
