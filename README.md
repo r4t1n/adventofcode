@@ -4,6 +4,12 @@ Solving Advent of Code in Rust
 
 ## Stars
 
+### 2016
+
+|Day|Part 1|Part 2|
+|:-:|:----:|:----:|
+|[Day 1](2016/01)|⭐|⭐|
+
 ### 2015
 
 |Day|Part 1|Part 2|
