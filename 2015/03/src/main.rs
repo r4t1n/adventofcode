@@ -78,11 +78,11 @@ fn main() {
         exit(1);
     }
 
-    let input_filename: &String = &args[1];
-    let input: String = match read_to_string(input_filename) {
+    let input_filepath: &String = &args[1];
+    let input: String = match read_to_string(input_filepath) {
         Ok(input) => input.trim().to_string(),
         Err(err) => {
-            eprintln!("[!] Error reading file: {}", err);
+            eprintln!("[!] Error reading input: {}", err);
             exit(1);
         }
     };
