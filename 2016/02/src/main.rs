@@ -7,12 +7,8 @@ fn puzzle(input: &str) -> (String, String) {
     let mut code_part_2: String = String::new();
     let mut x_part_1: i8 = 0;
     let mut x_part_2: i8 = -2;
-    let mut x_values_part_1: Vec<i8> = Vec::new();
-    let mut x_values_part_2: Vec<i8> = Vec::new();
     let mut y_part_1: i8 = 0;
     let mut y_part_2: i8 = 0;
-    let mut y_values_part_1: Vec<i8> = Vec::new();
-    let mut y_values_part_2: Vec<i8> = Vec::new();
 
     for line in input.lines() {
         for char in line.chars() {
@@ -96,20 +92,10 @@ fn puzzle(input: &str) -> (String, String) {
             }
         }
 
-        x_values_part_1.push(x_part_1);
-        x_values_part_2.push(x_part_2);
-        y_values_part_1.push(y_part_1);
-        y_values_part_2.push(y_part_2);
-    }
-
-    for (x, y) in x_values_part_1.iter().zip(&y_values_part_1) {
-        let key = get_key_part_1(*x, *y);
-        code_part_1.push(key);
-    }
-
-    for (x, y) in x_values_part_2.iter().zip(&y_values_part_2) {
-        let key = get_key_part_2(*x, *y);
-        code_part_2.push(key);
+        let key_part_1: char = get_key_part_1(x_part_1, y_part_1);
+        let key_part_2: char = get_key_part_2(x_part_2, y_part_2);
+        code_part_1.push(key_part_1);
+        code_part_2.push(key_part_2)
     }
 
     (code_part_1, code_part_2)
