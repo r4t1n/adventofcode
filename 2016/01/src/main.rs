@@ -1,7 +1,7 @@
 use std::collections::HashSet;
 use std::env::args;
-use std::fs;
-use std::process;
+use std::fs::read_to_string;
+use std::process::exit;
 
 fn puzzle(input: &str) -> (u16, u16) {
     const NORTH: u8 = 0;
@@ -62,19 +62,20 @@ fn main() {
     let args: Vec<String> = args().collect();
     if args.len() != 2 {
         println!("[!] Usage: {} <input file>", args[0]);
-        process::exit(1);
+        exit(1);
     }
 
     let input_filename: &String = &args[1];
-    let input: String = match fs::read_to_string(input_filename) {
+    let input: String = match read_to_string(input_filename) {
         Ok(input) => input.trim().to_string(),
         Err(err) => {
             eprintln!("[!] Error reading file: {}", err);
-            process::exit(1);
+            exit(1);
         }
     };
 
     let (answer_part_1, answer_part_2) = puzzle(&input);
+
     println!("[+] Part 1: {}", answer_part_1);
     println!("[+] Part 2: {}", answer_part_2);
 }
