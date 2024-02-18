@@ -35,6 +35,7 @@ fn calculate_dimensions(dimensions: &mut [u8]) -> (u16, u16) {
     let bow: u16 = l * w * h;
 
     dimensions.sort();
+
     let slack: u16 = dimensions[0] as u16 * dimensions[1] as u16;
     let wrapping_paper: u16 = surface_area + slack;
     let ribbon: u8 = dimensions[0] + dimensions[0] + dimensions[1] + dimensions[1];
