@@ -103,45 +103,39 @@ fn puzzle(input: &str) -> (String, String) {
     }
 
     for (x, y) in x_values_part_1.iter().zip(&y_values_part_1) {
-        if let Some(key) = get_key_part_1(*x, *y) {
-            code_part_1.push(key);
-        } else {
-            println!("[!] Invalid coordinate: {}, {}", x, y);
-        }
+        let key = get_key_part_1(*x, *y);
+        code_part_1.push(key);
     }
 
     for (x, y) in x_values_part_2.iter().zip(&y_values_part_2) {
-        if let Some(key) = get_key_part_2(*x, *y) {
-            code_part_2.push(key);
-        } else {
-            println!("[!] Invalid coordinate: {}, {}", x, y);
-        }
+        let key = get_key_part_2(*x, *y);
+        code_part_2.push(key);
     }
 
     (code_part_1, code_part_2)
 }
 
-fn get_key_part_1(x: i8, y: i8) -> Option<char> {
+fn get_key_part_1(x: i8, y: i8) -> char {
     let keypad: [[char; 3]; 3] = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']];
 
     let index_row: usize = match y {
         -1 => 2,
         0 => 1,
         1 => 0,
-        _ => return None,
+        _ => panic!("[!] Invalid y coordinate: {}", y),
     };
 
     let index_col: usize = match x {
         -1 => 0,
         0 => 1,
         1 => 2,
-        _ => return None,
+        _ => panic!("[!] Invalid x coordinate: {}", x),
     };
 
-    Some(keypad[index_row][index_col])
+    keypad[index_row][index_col]
 }
 
-fn get_key_part_2(x: i8, y: i8) -> Option<char> {
+fn get_key_part_2(x: i8, y: i8) -> char {
     let keypad: [[char; 5]; 5] = [
         ['0', '0', '1', '0', '0'],
         ['0', '2', '3', '4', '0'],
@@ -156,7 +150,7 @@ fn get_key_part_2(x: i8, y: i8) -> Option<char> {
         0 => 2,
         1 => 1,
         2 => 0,
-        _ => return None,
+        _ => panic!("[!] Invalid y coordinate: {}", y),
     };
 
     let index_col: usize = match x {
@@ -165,10 +159,10 @@ fn get_key_part_2(x: i8, y: i8) -> Option<char> {
         0 => 2,
         1 => 3,
         2 => 4,
-        _ => return None,
+        _ => panic!("[!] Invalid x coordinate: {}", x),
     };
 
-    Some(keypad[index_row][index_col])
+    keypad[index_row][index_col]
 }
 
 fn main() {
