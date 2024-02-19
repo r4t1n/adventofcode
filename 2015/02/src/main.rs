@@ -17,7 +17,7 @@ fn puzzle(input: &str) -> (u32, u32) {
             continue;
         }
 
-        let (wrapping_paper, ribbon) = calculate_dimensions(&mut dimensions);
+        let (wrapping_paper, ribbon) = calculate_present(&mut dimensions);
 
         wrapping_paper_sum += wrapping_paper as u32;
         ribbon_sum += ribbon as u32;
@@ -26,7 +26,7 @@ fn puzzle(input: &str) -> (u32, u32) {
     (wrapping_paper_sum, ribbon_sum)
 }
 
-fn calculate_dimensions(dimensions: &mut [u8]) -> (u16, u16) {
+fn calculate_present(dimensions: &mut [u8]) -> (u16, u16) {
     let l: u16 = dimensions[0] as u16;
     let w: u16 = dimensions[1] as u16;
     let h: u16 = dimensions[2] as u16;

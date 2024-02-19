@@ -92,17 +92,20 @@ fn puzzle(input: &str) -> (String, String) {
             }
         }
 
-        let key_part_1: char = get_key_part_1(x_part_1, y_part_1);
-        let key_part_2: char = get_key_part_2(x_part_2, y_part_2);
-        code_part_1.push(key_part_1);
-        code_part_2.push(key_part_2)
+        code_part_1.push(get_key_part_1(x_part_1, y_part_1));
+        code_part_2.push(get_key_part_2(x_part_2, y_part_2));
     }
 
     (code_part_1, code_part_2)
 }
 
 fn get_key_part_1(x: i8, y: i8) -> char {
-    let keypad: [[char; 3]; 3] = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']];
+    #[rustfmt::skip]
+    let keypad: [[char; 3]; 3] = [
+        ['1', '2', '3'],
+        ['4', '5', '6'],
+        ['7', '8', '9'],
+    ];
 
     let index_row: usize = match y {
         -1 => 2,
@@ -123,11 +126,11 @@ fn get_key_part_1(x: i8, y: i8) -> char {
 
 fn get_key_part_2(x: i8, y: i8) -> char {
     let keypad: [[char; 5]; 5] = [
-        ['0', '0', '1', '0', '0'],
-        ['0', '2', '3', '4', '0'],
+        ['.', '.', '1', '.', '.'],
+        ['.', '2', '3', '4', '.'],
         ['5', '6', '7', '8', '9'],
-        ['0', 'A', 'B', 'C', '0'],
-        ['0', '0', 'D', '0', '0'],
+        ['.', 'A', 'B', 'C', '.'],
+        ['.', '.', 'D', '.', '.'],
     ];
 
     let index_row: usize = match y {

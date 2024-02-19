@@ -10,10 +10,10 @@ fn puzzle(input: &str) -> (u16, u16) {
     const WEST: u8 = 3;
     let mut blocks_away_part_2: u16 = 0;
     let mut direction: u8 = NORTH;
+    let mut visited: HashSet<(i16, i16)> = HashSet::new();
     let mut x: i16 = 0;
     let mut y: i16 = 0;
 
-    let mut visited: HashSet<(i16, i16)> = HashSet::new();
     visited.insert((0, 0));
 
     for instruction in input.split(", ") {

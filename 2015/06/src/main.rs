@@ -9,12 +9,12 @@ fn puzzle(input: &str) -> (u32, u32) {
     let mut total_brightness: u32 = 0;
 
     for line in input.lines() {
-        let instruction: &str = if line.starts_with("toggle") {
-            "toggle"
-        } else if line.starts_with("turn on") {
-            "turn on"
+        let instruction: u8 = if line.starts_with("turn on") {
+            1
         } else if line.starts_with("turn off") {
-            "turn off"
+            0
+        } else if line.starts_with("toggle") {
+            2
         } else {
             println!("[!] Invalid line: {}", line);
             continue;
@@ -53,20 +53,20 @@ fn puzzle(input: &str) -> (u32, u32) {
 fn modify_grid(
     grid_part_1: &mut [[bool; 1000]; 1000],
     grid_part_2: &mut [[u32; 1000]; 1000],
-    instruction: &str,
+    instruction: u8,
     coords: Vec<u16>,
 ) {
     let instruction_part_1: fn(bool) -> bool = match instruction {
-        "turn on" => |_| true,
-        "turn off" => |_| false,
-        "toggle" => |state: bool| !state,
+        1 => |_| true,
+        0 => |_| false,
+        2 => |state: bool| !state,
         _ => return,
     };
 
     let instruction_part_2: fn(u32) -> u32 = match instruction {
-        "turn on" => |brightness: u32| brightness + 1,
-        "turn off" => |brightness: u32| brightness.saturating_sub(1),
-        "toggle" => |brightness: u32| brightness + 2,
+        1 => |brightness: u32| brightness + 1,
+        0 => |brightness: u32| brightness.saturating_sub(1),
+        2 => |brightness: u32| brightness + 2,
         _ => return,
     };
 

@@ -2,10 +2,8 @@ use std::env::args;
 use std::fs::read_to_string;
 use std::process::exit;
 
-// iterate over character and split for non numeric
-
 fn puzzle(input: &str) -> (u16, i32) {
-    let mut valid_triangles: u16 = 0;
+    let mut possible_triangles: u16 = 0;
     let answer_part_2 = 0;
 
     for line in input.lines() {
@@ -19,15 +17,15 @@ fn puzzle(input: &str) -> (u16, i32) {
             continue;
         }
 
-        if calculate_dimensions(&mut dimensions) {
-            valid_triangles += 1;
+        if is_possible_triangle(&mut dimensions) {
+            possible_triangles += 1;
         }
     }
 
-    (valid_triangles, answer_part_2)
+    (possible_triangles, answer_part_2)
 }
 
-fn calculate_dimensions(dimensions: &mut [u16]) -> bool {
+fn is_possible_triangle(dimensions: &mut [u16]) -> bool {
     dimensions.sort();
 
     (dimensions[0] + dimensions[1]) > dimensions[2]
