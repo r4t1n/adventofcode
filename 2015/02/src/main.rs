@@ -52,6 +52,8 @@ fn main() {
     }
 
     let input_filepath: &String = &args[1];
+    println!("[+] Reading input from: {}", input_filepath);
+
     let input: String = match read_to_string(input_filepath) {
         Ok(input) => input.trim().to_string(),
         Err(err) => {
@@ -60,8 +62,10 @@ fn main() {
         }
     };
 
+    println!("[+] Running the puzzle...");
+
     let (answer_part_1, answer_part_2) = puzzle(&input);
 
-    println!("[+] Part 1: {}", answer_part_1);
-    println!("[+] Part 2: {}", answer_part_2);
+    println!("[*] Part 1: {}", answer_part_1);
+    println!("[*] Part 2: {}", answer_part_2);
 }
