@@ -8,6 +8,7 @@ Solving Advent of Code in Rust
 | --- | ------- | -------- |
 | 1 | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | [Source](2016/01/src/main.rs) |
 | 2 | [Bathroom Security](https://adventofcode.com/2016/day/2) | [Source](2016/02/src/main.rs) |
+| 3 | [Squares With Three Sides](https://adventofcode.com/2016/day/3) | [Source](2016/03/src/main.rs) |
 
 ## 2015
 

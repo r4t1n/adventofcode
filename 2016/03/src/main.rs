@@ -2,27 +2,43 @@ use std::env::args;
 use std::fs::read_to_string;
 use std::process::exit;
 
-fn puzzle(input: &str) -> (u16, i32) {
-    let mut possible_triangles: u16 = 0;
-    let answer_part_2 = 0;
+fn puzzle(input: &str) -> (u16, u16) {
+    let mut dimensions_sets: Vec<Vec<u16>> = vec![vec![0; 3], vec![0; 3], vec![0; 3]];
+    let mut line_count: u8 = 0;
+    let mut possible_triangles_part_1: u16 = 0;
+    let mut possible_triangles_part_2: u16 = 0;
 
     for line in input.lines() {
-        let mut dimensions: Vec<u16> = line
+        let mut dimensions_line: Vec<u16> = line
             .split(|c: char| !c.is_numeric())
             .filter_map(|s: &str| s.parse().ok())
             .collect();
 
-        if dimensions.len() != 3 {
+        if dimensions_line.len() != 3 {
             println!("[!] Invalid line: {}", line);
             continue;
         }
 
-        if is_possible_triangle(&mut dimensions) {
-            possible_triangles += 1;
+        for (i, dim_set) in dimensions_sets.iter_mut().enumerate() {
+            dim_set[line_count as usize] = dimensions_line[i];
+        }
+
+        line_count = (line_count + 1) % 3;
+
+        if is_possible_triangle(&mut dimensions_line) {
+            possible_triangles_part_1 += 1;
+        }
+
+        if line_count == 0 && dimensions_sets.iter().all(|set| set.len() == 3) {
+            for dim_set in &mut dimensions_sets {
+                if is_possible_triangle(dim_set) {
+                    possible_triangles_part_2 += 1;
+                }
+            }
         }
     }
 
-    (possible_triangles, answer_part_2)
+    (possible_triangles_part_1, possible_triangles_part_2)
 }
 
 fn is_possible_triangle(dimensions: &mut [u16]) -> bool {
