@@ -49,7 +49,7 @@ fn main() {
         }
     };
 
-    println!("[+] Running the puzzle...");
+    println!("[+] Solving the puzzle...");
 
     let (answer_part_1, answer_part_2) = puzzle(&input);
 
