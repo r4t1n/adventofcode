@@ -19,8 +19,8 @@ fn puzzle(input: &str) -> (u16, u16) {
             continue;
         }
 
-        for (i, dim_set) in dimensions_sets.iter_mut().enumerate() {
-            dim_set[line_count as usize] = dimensions_line[i];
+        for (i, dimension_set) in dimensions_sets.iter_mut().enumerate() {
+            dimension_set[line_count as usize] = dimensions_line[i];
         }
 
         line_count = (line_count + 1) % 3;
@@ -29,7 +29,7 @@ fn puzzle(input: &str) -> (u16, u16) {
             possible_triangles_part_1 += 1;
         }
 
-        if line_count == 0 && dimensions_sets.iter().all(|set| set.len() == 3) {
+        if line_count == 0 && dimensions_sets.iter().all(|set: &Vec<u16>| set.len() == 3) {
             for dim_set in &mut dimensions_sets {
                 if is_possible_triangle(dim_set) {
                     possible_triangles_part_2 += 1;
