@@ -30,7 +30,7 @@ fn puzzle(input: &str) -> (u16, u16) {
         }
 
         if line_count == 0 && dimensions_sets.iter().all(|set: &Vec<u16>| set.len() == 3) {
-            for dim_set in &mut dimensions_sets {
+            for dimension_set in &mut dimensions_sets {
                 if is_possible_triangle(dim_set) {
                     possible_triangles_part_2 += 1;
                 }
